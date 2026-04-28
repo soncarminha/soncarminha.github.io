@@ -16,7 +16,7 @@
     --line: #A9927D;
     --white: #F2F4F3;
     --taupe: #A9927D;
-    --navy: #0B1D2E;
+    --navy: #1B2D3E; /* Navy más claro solicitado */
   }
 
   html { scroll-behavior: smooth; }
@@ -38,8 +38,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 3rem;
-    background: #0B1D2E;
-    border-bottom: 1px solid #1B2D3E;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .nav-logo {
     font-family: 'Playfair Display', serif;
@@ -127,29 +127,7 @@
   .btn-secondary { border: 1px solid var(--ink); color: var(--ink); padding: 0.8rem 2rem; border-radius: 2rem; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em; transition: all 0.2s; display: inline-block; }
   .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-  .scroll-hint {
-    position: absolute;
-    bottom: 2.5rem;
-    right: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeIn 1s 1.2s forwards;
-  }
-  .scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--muted), transparent);
-    animation: scrollDown 1.5s 1.5s infinite;
-  }
-
-  /* ABOUT */
+  /* ABOUT / PERFIL */
   .about {
     background: var(--white);
     padding: 6rem 3rem;
@@ -173,7 +151,7 @@
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
-  .about p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+  .about p { color: var(--muted); line-height: 1.85; margin-bottom: 1.5rem; }
   .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .stat-item { border-top: 1px solid var(--line); padding-top: 1rem; }
   .stat-num {
@@ -213,8 +191,8 @@
   }
   .skill-pill::after { content: '·'; color: var(--accent); font-style: normal; }
 
-  /* WORK */
-  .work { padding: 6rem 3rem; background: var(--cream); }
+  /* WORK / PORTFOLIO */
+  .work { padding: 6rem 3rem; background: var(--navy); }
   .work-header {
     display: flex;
     justify-content: space-between;
@@ -227,6 +205,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 400;
+    color: var(--cream);
   }
   .work-grid {
     display: grid;
@@ -234,7 +213,7 @@
     gap: 1.5rem;
   }
   .project-card {
-    background: var(--white);
+    background: rgba(255,255,255,0.03);
     border-radius: 1rem;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -242,8 +221,9 @@
     text-decoration: none;
     color: inherit;
     display: block;
+    border: 1px solid rgba(255,255,255,0.05);
   }
-  .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
   .project-thumb {
     height: 220px;
     display: flex;
@@ -266,222 +246,47 @@
     letter-spacing: 0.05em;
     position: absolute;
   }
-  .project-thumb-icon {
-    position: relative;
-    z-index: 2;
-    width: 56px;
-    height: 56px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .project-info { padding: 1.4rem 1.5rem 1.6rem; }
-  .project-cat {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-  .project-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
-  }
-  .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .project-cat { font-size: 0.72rem; font-weight: 500; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase; }
+  .project-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--cream); margin-bottom: 0.4rem; }
+  .project-desc { font-size: 0.85rem; color: rgba(242,244,243,0.5); line-height: 1.6; }
 
   /* SKILLS SECTION */
   .skills-section { padding: 6rem 3rem; background: var(--white); }
-  .skills-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 400;
-    margin-bottom: 3rem;
-  }
-  .skills-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 1.5rem;
-  }
-  .skill-card {
-    background: var(--cream);
-    border-radius: 1rem;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    border: 1px solid var(--line);
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-  .skill-icon {
-    width: 44px; height: 44px;
-    background: var(--ink);
-    border-radius: 0.75rem;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-bottom: 0.4rem;
-  }
-  .skill-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-  }
-  .skill-label { font-size: 0.88rem; color: var(--muted); line-height: 1.5; font-weight: 500; }
+  .skills-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 3rem; }
+  .skills-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.5rem; }
+  .skill-card { background: var(--cream); border-radius: 1rem; padding: 2rem 1.5rem; border: 1px solid var(--line); transition: transform 0.25s; }
+  .skill-card:hover { transform: translateY(-4px); }
 
   /* CV SECTION */
-  .cv-section { padding: 6rem 3rem; background: var(--cream); }
-  .cv-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 400;
-    margin-bottom: 3rem;
-  }
-  .cv-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .cv-grid .cv-block { height: 100%; }
-  @media (max-width: 768px) { .cv-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2rem;
-  }
-  .cv-item {
-    display: flex;
-    gap: 1.2rem;
-    margin-bottom: 1.8rem;
-    padding-bottom: 1.8rem;
-    border-bottom: 1px solid var(--line);
-  }
-  .cv-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .cv-dot {
-    width: 9px; height: 9px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-    margin-top: 0.6rem;
-  }
-  .cv-role { font-weight: 500; font-size: 0.98rem; color: var(--ink); margin-bottom: 0.15rem; }
-  .cv-company { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.1rem; }
-  .cv-year { font-size: 0.78rem; color: var(--accent); font-style: italic; font-family: 'Playfair Display', serif; }
-  .cv-block h3 {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2rem;
-  }
-  @media (max-width: 768px) { .cv-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .cv-section { padding: 6rem 3rem; background: var(--taupe); }
+  .cv-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 3rem; color: var(--ink); }
+  .cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .cv-item { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; padding-bottom: 1.8rem; border-bottom: 1px solid rgba(11,29,46,0.1); }
+  .cv-role { font-weight: 500; color: var(--ink); }
+  .cv-year { font-size: 0.78rem; color: var(--accent); font-style: italic; }
 
   /* SERVICES */
   .services { padding: 6rem 3rem; background: var(--ink); color: var(--cream); }
-  .services .section-label { color: var(--accent); }
-  .services h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 400;
-    margin-bottom: 3rem;
-    color: var(--cream);
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .service-item {
-    padding: 2rem 1.5rem 2rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    border-right: 1px solid rgba(255,255,255,0.1);
-  }
-  .service-num { font-family: 'Playfair Display', serif; font-size: 0.85rem; color: var(--accent); margin-bottom: 1rem; font-style: italic; }
-  .service-title { font-weight: 500; font-size: 1rem; margin-bottom: 0.6rem; color: var(--cream); }
-  .service-desc { font-size: 0.85rem; color: rgba(245,240,232,0.5); line-height: 1.65; }
+  .services h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 3rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 1px solid rgba(255,255,255,0.1); }
+  .service-item { padding: 2rem 1.5rem 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); }
 
   /* CONTACT */
-  .contact { padding: 7rem 3rem; background: var(--cream); text-align: center; }
-  .contact .section-label { margin-bottom: 1rem; }
-  .contact h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-  .contact h2 em { font-style: italic; color: var(--accent); }
-  .contact p { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
-  .contact-email {
-    display: inline-block;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.2rem;
-    transition: color 0.2s;
-    margin-bottom: 3rem;
-  }
-  .contact-email:hover { color: var(--accent); }
-  .social-links { display: flex; justify-content: center; gap: 1.5rem; }
-  .social-link {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .social-link:hover { color: var(--accent); }
+  .contact { padding: 7rem 3rem; background: var(--navy); text-align: center; color: var(--cream); }
+  .contact-email { display: inline-block; font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--cream); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 0.2rem; margin-bottom: 3rem; }
 
-  footer {
-    padding: 1.5rem 3rem;
-    border-top: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    color: var(--muted);
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
+  footer { padding: 1.5rem 3rem; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
 
-  /* ANIMATIONS */
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes fadeIn { to { opacity: 1; } }
   @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-  @keyframes scrollDown {
-    0% { opacity: 1; transform: scaleY(0); transform-origin: top; }
-    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-    100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1rem; }
-    .hero, .about, .work, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .about { grid-template-columns: 1fr; gap: 2.5rem; }
-    .skills-row { padding: 2rem 1.5rem; }
-    .services { padding: 4rem 1.5rem; }
-    footer { padding: 1.5rem; }
-    .scroll-hint { display: none; }
+    .nav-links { display: none; } /* Simplificado para móvil */
+    .hero, .about, .work, .contact { padding: 4rem 1.5rem; }
+    .about, .cv-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -490,8 +295,6 @@
 <nav>
   <a href="#" class="nav-logo">Carmen Iglesias</a>
   <ul class="nav-links">
-    <li><a href="#sobre">Perfil</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#trabajo">Portfolio</a></li>
@@ -502,417 +305,134 @@
   </ul>
 </nav>
 
-<section class="hero" style="background:#0B1D2E;">
-  <div class="hero-bg-text" style="-webkit-text-stroke:1px rgba(169,146,125,0.2);">CARMEN</div>
+<section class="hero" style="background: var(--navy);">
+  <div class="hero-bg-text" style="-webkit-text-stroke:1px rgba(169,146,125,0.1);">CARMEN</div>
   <div class="hero-content">
-    <span class="hero-tag" style="color:#A9927D;border-color:#A9927D;">Disponible · Madrid y Galicia</span>
-    <h1 style="color:#F2F4F3;">Creative Copy<br>&amp; <em style="color:#49111C;">Content Creator</em></h1>
-    <p class="hero-bio" style="color:#A9927D;">Copywriter creativa y Creadora de Contenido. Desarrollo conceptos, escribo las bajadas y le doy vida a las redes. Del brief a la pieza, con criterio y con muchas ganas.</p>
+    <span class="hero-tag" style="color:var(--taupe); border-color:var(--taupe);">Disponible · Madrid y Galicia</span>
+    <h1 style="color:var(--cream);">Creative Copy<br>&amp; <em style="color:var(--accent);">Content Creator</em></h1>
+    <p class="hero-bio" style="color:var(--taupe);">Copywriter creativa y Creadora de Contenido. Desarrollo conceptos, escribo las bajadas y le doy vida a las redes. Del brief a la pieza.</p>
     <div class="hero-ctas">
-      <a href="#servicios" class="btn-primary" style="background:#49111C;color:#F2F4F3;">Ver portfolio</a>
-      <a href="#contacto" class="btn-secondary" style="border-color:#A9927D;color:#A9927D;">Hablemos</a>
+      <a href="#trabajo" class="btn-primary" style="background:var(--accent); color:var(--cream);">Ver portfolio</a>
+      <a href="#contacto" class="btn-secondary" style="border-color:var(--taupe); color:var(--taupe);">Hablemos</a>
     </div>
   </div>
-  <div class="scroll-hint" style="color:#5E503F;">
-    <span>Scroll</span>
-    <div class="scroll-line" style="background:linear-gradient(to bottom,#5E503F,transparent);"></div>
-  </div>
 </section>
-
-<div class="skills-row">
-  <div class="skills-track">
-    <span class="skill-pill">Copywriting creativo</span>
-    <span class="skill-pill">Content Strategy</span>
-    <span class="skill-pill">Social Media</span>
-    <span class="skill-pill">Community Manager</span>
-    <span class="skill-pill">Conceptualización</span>
-    <span class="skill-pill">Storytelling</span>
-    <span class="skill-pill">Campañas publicitarias</span>
-    <span class="skill-pill">Copywriting creativo</span>
-    <span class="skill-pill">Content Strategy</span>
-    <span class="skill-pill">Social Media</span>
-    <span class="skill-pill">Community Manager</span>
-    <span class="skill-pill">Conceptualización</span>
-    <span class="skill-pill">Storytelling</span>
-    <span class="skill-pill">Campañas publicitarias</span>
-  </div>
-</div>
 
 <!-- SERVICIOS -->
-<section class="services" id="servicios" style="background:#49111C;">
-  <p class="section-label" style="color:#A9927D;">Qué ofrezco</p>
-  <h2 style="color:#F2F4F3;">Servicios</h2>
+<section class="services" id="servicios">
+  <p class="section-label">Qué ofrezco</p>
+  <h2>Servicios</h2>
   <div class="services-grid">
-    <div class="service-item" style="border-color:rgba(169,146,125,0.25);">
-      <p class="service-num" style="color:#A9927D;">01</p>
-      <h3 class="service-title" style="color:#F2F4F3;">Copywriting Creativo</h3>
-      <p class="service-desc" style="color:rgba(242,244,243,0.55);">Conceptos, titulares, bajadas y claims.</p>
+    <div class="service-item">
+      <p style="color:var(--taupe); font-style:italic;">01</p>
+      <h3>Copywriting Creativo</h3>
+      <p style="color:rgba(242,244,243,0.5);">Conceptos, titulares, bajadas y claims.</p>
     </div>
-    <div class="service-item" style="border-color:rgba(169,146,125,0.25);">
-      <p class="service-num" style="color:#A9927D;">02</p>
-      <h3 class="service-title" style="color:#F2F4F3;">Content Creation</h3>
-      <p class="service-desc" style="color:rgba(242,244,243,0.55);">Grabación, edición y diseño de contenido para redes sociales.</p>
+    <div class="service-item">
+      <p style="color:var(--taupe); font-style:italic;">02</p>
+      <h3>Content Creation</h3>
+      <p style="color:rgba(242,244,243,0.5);">Diseño, foto, vídeo y edición para redes.</p>
     </div>
-    <div class="service-item" style="border-color:rgba(169,146,125,0.25);">
-      <p class="service-num" style="color:#A9927D;">03</p>
-      <h3 class="service-title" style="color:#F2F4F3;">Community Management</h3>
-      <p class="service-desc" style="color:rgba(242,244,243,0.55);">Gestión de comunidades, tono de marca y respuesta en tiempo real.</p>
-    </div>
-    <div class="service-item" style="border-color:rgba(169,146,125,0.25);">
-      <p class="service-num" style="color:#A9927D;">04</p>
-      <h3 class="service-title" style="color:#F2F4F3;">Social Media</h3>
-      <p class="service-desc" style="color:rgba(242,244,243,0.55);">Pilares de contenido y planificación a largo plazo. Informes finales.</p>
+    <div class="service-item">
+      <p style="color:var(--taupe); font-style:italic;">03</p>
+      <h3>Estrategia Social</h3>
+      <p style="color:rgba(242,244,243,0.5);">Pilares de contenido y planificación.</p>
     </div>
   </div>
 </section>
 
-<!-- SKILLS - segundo -->
-<section class="skills-section" id="skills" style="background:#F2F4F3;">
-  <p class="section-label" style="color:#49111C;">mis +1</p>
-  <h2 style="color:#0A0908;">Skills</h2>
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <p class="section-label">Mis +1</p>
+  <h2>Skills</h2>
   <div class="skills-cards">
-
-    <div class="skill-card" style="background:#0B1D2E; border-color:#0B1D2E;">
-      <div class="skill-icon" style="background:#49111C;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="8" r="4" stroke="white" stroke-width="1.5"/>
-          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="skill-num" style="color:#A9927D;">+5</div>
-      <div class="skill-label" style="color:#F2F4F3;">Años de experiencia en agencias creativas</div>
+    <div class="skill-card">
+      <div style="font-family:'Playfair Display'; font-size:2rem; color:var(--accent);">+5</div>
+      <p>Años de experiencia</p>
     </div>
-
-    <div class="skill-card" style="background:#49111C; border-color:#49111C;">
-      <div class="skill-icon" style="background:rgba(255,255,255,0.1);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="1.5"/>
-          <path d="M7 9h4M7 13h6M7 17h3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M15 12l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="skill-num" style="color:#F2F4F3;">C1</div>
-      <div class="skill-label" style="color:rgba(242,244,243,0.7);">Nivel de inglés certificado</div>
+    <div class="skill-card">
+      <div style="font-family:'Playfair Display'; font-size:2rem; color:var(--accent);">PRO</div>
+      <p>Canva & CapCut</p>
     </div>
-
-    <div class="skill-card" style="background:#A9927D; border-color:#A9927D;">
-      <div class="skill-icon" style="background:rgba(11,29,46,0.3);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="13" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="3" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="13" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-        </svg>
-      </div>
-      <div class="skill-num" style="color:#0B1D2E;">PRO</div>
-      <div class="skill-label" style="color:#0B1D2E;">Canva y CapCut nivel profesional</div>
-    </div>
-
-    <div class="skill-card" style="background:#0B1D2E; border-color:#0B1D2E;">
-      <div class="skill-icon" style="background:#49111C;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="7" cy="6" r="1.5" fill="white"/>
-          <circle cx="12" cy="12" r="1.5" fill="white"/>
-          <circle cx="17" cy="18" r="1.5" fill="white"/>
-        </svg>
-      </div>
-      <div class="skill-num" style="color:#A9927D;">+15</div>
-      <div class="skill-label" style="color:#F2F4F3;">Marcas</div>
-    </div>
-
-    <div class="skill-card" style="background:#49111C; border-color:#49111C;">
-      <div class="skill-icon" style="background:rgba(255,255,255,0.1);">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="skill-num" style="color:#F2F4F3;">Pymes</div>
-      <div class="skill-label" style="color:rgba(242,244,243,0.7);">Freelance disponible para pymes y startups</div>
-    </div>
-
   </div>
 </section>
 
-<!-- PORTFOLIO - tercero -->
-<section class="work" id="trabajo" style="background:#0B1D2E;">
+<!-- PORTFOLIO -->
+<section class="work" id="trabajo">
   <div class="work-header">
-    <div>
-      <p class="section-label" style="color:#A9927D;">Proyectos seleccionados</p>
-      <h2 style="color:#F2F4F3;">Portfolio</h2>
-    </div>
-    <a href="https://www.behance.net/soncarminha" target="_blank" class="btn-secondary" style="border-color:#A9927D;color:#A9927D;">Ver en Behance →</a>
+    <h2>Portfolio</h2>
+    <a href="https://www.behance.net/soncarminha" target="_blank" class="btn-secondary" style="border-color:var(--taupe); color:var(--taupe);">Behance →</a>
   </div>
   <div class="work-grid">
-
-    <a class="project-card" href="https://www.behance.net/gallery/245813133/Spotify" target="_blank" style="background:#49111C;">
-      <div class="project-thumb thumb-spotify">
-        <span class="project-thumb-label">Spotify</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-            <path d="M7 9.5c3-1 6.5-1 9.5.5M7.5 12c2.5-.8 5.5-.8 8.5.5M8 14.5c2-.6 4.5-.6 7 .3" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
+    <div class="project-card">
+      <div class="project-thumb thumb-spotify"><span class="project-thumb-label">Spotify</span></div>
       <div class="project-info">
-        <p class="project-cat" style="color:#A9927D;">Copy · Campaña</p>
-        <h3 class="project-title" style="color:#F2F4F3;">Spotify</h3>
-        <p class="project-desc" style="color:rgba(242,244,243,0.55);">Desarrollo de concepto y copy para campaña de la plataforma de streaming.</p>
+        <p class="project-cat">Copy · Campaña</p>
+        <h3 class="project-title">Spotify</h3>
       </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/245798845/Powerade" target="_blank" style="background:#1B2D3E;">
-      <div class="project-thumb thumb-powerade">
-        <span class="project-thumb-label">Powerade</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3L4 12h5v9l8-10h-5z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb thumb-powerade"><span class="project-thumb-label">Powerade</span></div>
       <div class="project-info">
-        <p class="project-cat" style="color:#A9927D;">Copy · Sport</p>
-        <h3 class="project-title" style="color:#F2F4F3;">Powerade</h3>
-        <p class="project-desc" style="color:rgba(242,244,243,0.55);">Copies y conceptos creativos para marca de bebida deportiva de Coca-Cola.</p>
+        <p class="project-cat">Copy · Sport</p>
+        <h3 class="project-title">Powerade</h3>
       </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/192738053/YOIGO-revista-RESUMEN-POR-MESES" target="_blank" style="background:#5E503F;">
-      <div class="project-thumb thumb-yoigo">
-        <span class="project-thumb-label">Yoigo</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="4" width="16" height="16" rx="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <path d="M8 9h8M8 12h6M8 15h4" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat" style="color:#A9927D;">Editorial · Contenido</p>
-        <h3 class="project-title" style="color:#F2F4F3;">Yoigo — Revista</h3>
-        <p class="project-desc" style="color:rgba(242,244,243,0.55);">Resumen mensual y contenido editorial para la revista interna de Yoigo.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/244023735/Content-Social-CM" target="_blank" style="background:#49111C;">
-      <div class="project-thumb thumb-content">
-        <span class="project-thumb-label">Social</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <circle cx="18" cy="5" r="2.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <circle cx="6" cy="12" r="2.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <circle cx="18" cy="19" r="2.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <path d="M8.5 10.5l7-4M8.5 13.5l7 4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat" style="color:#A9927D;">Social Media · CM</p>
-        <h3 class="project-title" style="color:#F2F4F3;">Content, Social &amp; CM</h3>
-        <p class="project-desc" style="color:rgba(242,244,243,0.55);">Estrategia y gestión de contenidos para redes sociales de diversas marcas.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/192753979/PORTFOLIO-PERSONAL" target="_blank" style="background:#1B2D3E;">
-      <div class="project-thumb thumb-portfolio">
-        <span class="project-thumb-label">Portfolio</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="7" width="18" height="14" rx="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <path d="M8 7V5a2 2 0 014 0v2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat" style="color:#A9927D;">Portfolio personal</p>
-        <h3 class="project-title" style="color:#F2F4F3;">Selección de trabajos</h3>
-        <p class="project-desc" style="color:rgba(242,244,243,0.55);">Recopilación personal de piezas y proyectos más representativos.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/244094295/CV-CARMEN-IGLESIAS" target="_blank" style="background:#5E503F;">
-      <div class="project-thumb thumb-cv">
-        <span class="project-thumb-label">CV</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M9 12h6M9 16h4M9 8h6" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-            <rect x="4" y="3" width="16" height="18" rx="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat" style="color:#A9927D;">Currículum · Identidad</p>
-        <h3 class="project-title" style="color:#F2F4F3;">CV Carmen Iglesias</h3>
-        <p class="project-desc" style="color:rgba(242,244,243,0.55);">Currículum diseñado con identidad visual propia para destacar en el sector.</p>
-      </div>
-    </a>
-
+    </div>
   </div>
 </section>
 
-<!-- CV - cuarto -->
-<section class="cv-section" id="cv" style="background:#A9927D;">
-  <p class="section-label" style="color:#49111C;">CV</p>
-  <h2 style="color:#0B1D2E;">Currículum</h2>
+<!-- CV -->
+<section class="cv-section" id="cv">
+  <p class="section-label">CV</p>
+  <h2>Currículum</h2>
   <div class="cv-grid">
-
     <div class="cv-block">
-      <h3 style="color:#49111C;">Experiencia</h3>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
+      <div class="cv-item">
         <div>
-          <div class="cv-role" style="color:#0B1D2E;">Copy Creativa &amp; Social Media</div>
-          <div class="cv-company" style="color:#5E503F;">VML</div>
-          <div class="cv-year" style="color:#49111C;">Agencia creativa</div>
+          <div class="cv-role">Copy Creativa & Social Media</div>
+          <div style="color:var(--muted)">VML / Pool CP</div>
+          <div class="cv-year">Agencia creativa</div>
         </div>
       </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Copy Creativa &amp; Social Media</div>
-          <div class="cv-company" style="color:#5E503F;">Pool CP</div>
-          <div class="cv-year" style="color:#49111C;">Agencia creativa</div>
-        </div>
-      </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Content Creator &amp; Social Media</div>
-          <div class="cv-company" style="color:#5E503F;">Annie Bonnie</div>
-          <div class="cv-year" style="color:#49111C;">Agencia creativa</div>
-        </div>
-      </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Copy Creativa &amp; Content Creator</div>
-          <div class="cv-company" style="color:#5E503F;">Hogarth</div>
-          <div class="cv-year" style="color:#49111C;">Agencia de producción</div>
-        </div>
-      </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Social Media</div>
-          <div class="cv-company" style="color:#5E503F;">Antena 3</div>
-          <div class="cv-year" style="color:#49111C;">Medios de comunicación</div>
-        </div>
-      </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Freelance</div>
-          <div class="cv-company" style="color:#5E503F;">Proyectos propios y pymes</div>
-          <div class="cv-year" style="color:#49111C;">Desde 2019</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="cv-block">
-      <h3 style="color:#49111C;">Formación</h3>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Máster en Creatividad Publicitaria</div>
-          <div class="cv-company" style="color:#5E503F;">Universidad de Vigo</div>
-          <div class="cv-year" style="color:#49111C;">Posgrado</div>
-        </div>
-      </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Máster en Comunicación Digital</div>
-          <div class="cv-company" style="color:#5E503F;">The Core School</div>
-          <div class="cv-year" style="color:#49111C;">Posgrado</div>
-        </div>
-      </div>
-
-      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
-        <div class="cv-dot" style="background:#49111C;"></div>
-        <div>
-          <div class="cv-role" style="color:#0B1D2E;">Grado en Publicidad y RRPP</div>
-          <div class="cv-company" style="color:#5E503F;">Universidad de Vigo</div>
-          <div class="cv-year" style="color:#49111C;">Grado universitario</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- PERFIL - quinto -->
-<section class="about" id="sobre" style="background:#F2F4F3;">
+<!-- PERFIL ACTUALIZADO -->
+<section class="about" id="sobre">
   <div>
-    <p class="section-label" style="color:#49111C;">Sobre mí</p>
-    <h2 style="color:#0B1D2E;">De Copy en Copy y tiro porque me toca</h2>
-    <p style="color:#5E503F;">Soy Carmen, copywriter creativa y content creator con base en Madrid. Me muevo entre el concepto y la ejecución: de la idea que surge en un brief hasta la frase que engancha en un carrete.</p>
-    <p style="color:#5E503F;">He trabajado con marcas como Spotify, Powerade y Yoigo, desarrollando piezas de copy, contenido para redes y estrategia editorial. Disponible para proyectos freelance y posiciones full time.</p>
+    <p class="section-label">Sobre mí</p>
+    <h2>Copywriter creativa y Content creator con base en Madrid</h2>
+    <p>Me muevo entre el concepto y la ejecución: de la idea que surge en un brief hasta la creación de diseños, foto y vídeo (y toda la edición que conlleva) como la estrategia de redes.</p>
+    <p>He trabajado con marcas como <strong>Nivea, Powerade, Yoigo o Pantene</strong> así como pequeñas empresas locales. Disponible para proyectos freelance y posiciones full time.</p>
   </div>
   <div class="about-stats">
-    <div class="stat-item" style="border-color:#A9927D;">
-      <div class="stat-num" style="color:#49111C;">6+</div>
-      <div class="stat-label" style="color:#5E503F;">Años en el sector</div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--accent);">6+</div>
+      <div class="stat-label">Años de experiencia</div>
     </div>
-    <div class="stat-item" style="border-color:#A9927D;">
-      <div class="stat-num" style="color:#49111C;">8</div>
-      <div class="stat-label" style="color:#5E503F;">Grandes marcas</div>
-    </div>
-    <div class="stat-item" style="border-color:#A9927D;">
-      <div class="stat-num" style="color:#49111C;">100%</div>
-      <div class="stat-label" style="color:#5E503F;">Disponible ahora</div>
-    </div>
-    <div class="stat-item" style="border-color:#A9927D;">
-      <div class="stat-num" style="color:#49111C;">Madrid</div>
-      <div class="stat-label" style="color:#5E503F;">y Galicia</div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--accent);">Madrid</div>
+      <div class="stat-label">Base actual</div>
     </div>
   </div>
 </section>
 
-<!-- CONTACTO - último -->
-<section class="contact" id="contacto" style="background:#0B1D2E;">
-  <p class="section-label" style="color:#A9927D;">Contacto</p>
-  <h2 style="color:#F2F4F3;">Hablemos</h2>
-  <p style="color:#A9927D;">Te dejo mi mail porque lo de escribirse cartas ya es un poco old-fashioned</p>
-  <a href="mailto:carmeniglesias1999@gmail.com" class="contact-email" style="color:#F2F4F3; border-color:#49111C;">carmeniglesias1999@gmail.com</a>
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/carmeniglesiasrodriguez/" target="_blank" class="social-link" style="color:#A9927D;">LinkedIn</a>
-    <a href="https://www.behance.net/soncarminha" target="_blank" class="social-link" style="color:#A9927D;">Behance</a>
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <p class="section-label" style="color:var(--taupe);">Contacto</p>
+  <h2>Hablemos</h2>
+  <a href="mailto:carmeniglesias1999@gmail.com" class="contact-email">carmeniglesias1999@gmail.com</a>
+  <div style="display:flex; justify-content:center; gap:2rem;">
+    <a href="https://www.linkedin.com/in/carmeniglesiasrodriguez/" target="_blank" style="color:var(--taupe); text-decoration:none; font-size:0.8rem; text-transform:uppercase;">LinkedIn</a>
+    <a href="https://www.behance.net/soncarminha" target="_blank" style="color:var(--taupe); text-decoration:none; font-size:0.8rem; text-transform:uppercase;">Behance</a>
   </div>
 </section>
 
-<footer style="background:#0B1D2E; border-color:#1B2D3E;">
-  <span style="color:#5E503F;">© 2026 Carmen Iglesias Rodríguez</span>
-  <span style="color:#5E503F;">Creative Copy &amp; Content Creator · Madrid</span>
+<footer>
+  <span>© 2026 Carmen Iglesias Rodríguez</span>
+  <span>Creative Copy & Content Creator</span>
 </footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.project-card, .service-item, .stat-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-</script>
 
 </body>
 </html>
