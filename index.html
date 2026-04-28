@@ -10,12 +10,13 @@
 
   :root {
     --cream: #F2F4F3;
-    --ink: #0A0908;
+    --ink: #0B1D2E;
     --muted: #5E503F;
     --accent: #49111C;
     --line: #A9927D;
     --white: #F2F4F3;
     --taupe: #A9927D;
+    --navy: #0B1D2E;
   }
 
   html { scroll-behavior: smooth; }
@@ -37,14 +38,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 3rem;
-    background: #0A0908;
-    border-bottom: 1px solid #1a1a1a;
+    background: #0B1D2E;
+    border-bottom: 1px solid #1B2D3E;
   }
   .nav-logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     letter-spacing: 0.02em;
-    color: var(--ink);
+    color: #F2F4F3;
     text-decoration: none;
   }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -53,11 +54,11 @@
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: #A9927D;
     text-decoration: none;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover { color: #F2F4F3; }
 
   /* HERO */
   .hero {
@@ -501,7 +502,7 @@
   </ul>
 </nav>
 
-<section class="hero" style="background:#0A0908;">
+<section class="hero" style="background:#0B1D2E;">
   <div class="hero-bg-text" style="-webkit-text-stroke:1px rgba(169,146,125,0.2);">CARMEN</div>
   <div class="hero-content">
     <span class="hero-tag" style="color:#A9927D;border-color:#A9927D;">Disponible · Madrid y Galicia</span>
@@ -537,219 +538,7 @@
   </div>
 </div>
 
-<!-- SKILLS - arriba del todo -->
-<section class="skills-section" id="skills">
-  <p class="section-label">mis +1</p>
-  <h2>Skills</h2>
-  <div class="skills-cards">
-
-    <div class="skill-card">
-      <div class="skill-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="8" r="4" stroke="white" stroke-width="1.5"/>
-          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="skill-num">+5</div>
-      <div class="skill-label">Años de experiencia en agencias creativas</div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="1.5"/>
-          <path d="M7 9h4M7 13h6M7 17h3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M15 12l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="skill-num">C1</div>
-      <div class="skill-label">Nivel de inglés certificado</div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="13" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="3" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-          <rect x="13" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
-        </svg>
-      </div>
-      <div class="skill-num">PRO</div>
-      <div class="skill-label">Canva y CapCut nivel profesional</div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="7" cy="6" r="1.5" fill="white"/>
-          <circle cx="12" cy="12" r="1.5" fill="white"/>
-          <circle cx="17" cy="18" r="1.5" fill="white"/>
-        </svg>
-      </div>
-      <div class="skill-num">+15</div>
-      <div class="skill-label">Marcas</div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="skill-num">Pymes</div>
-      <div class="skill-label">Freelance disponible para pymes y startups</div>
-    </div>
-
-  </div>
-</section>
-
-<section class="about" id="sobre">
-  <div>
-    <p class="section-label">Sobre mí</p>
-    <h2>De Copy en Copy y tiro porque me toca</h2>
-    <p>Soy Carmen, copywriter creativa y content creator con base en Madrid. Me muevo entre el concepto y la ejecución: de la idea que surge en un brief hasta la frase que engancha en un carrete.</p>
-    <p>He trabajado con marcas como Spotify, Powerade y Yoigo, desarrollando piezas de copy, contenido para redes y estrategia editorial. Disponible para proyectos freelance y posiciones full time.</p>
-  </div>
-  <div class="about-stats">
-    <div class="stat-item">
-      <div class="stat-num">6+</div>
-      <div class="stat-label">Años en el sector</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Grandes marcas</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Disponible ahora</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">Madrid</div>
-      <div class="stat-label">Con movilidad</div>
-    </div>
-  </div>
-</section>
-
-<section class="work" id="trabajo">
-  <div class="work-header">
-    <div>
-      <p class="section-label">Proyectos seleccionados</p>
-      <h2>Portfolio</h2>
-    </div>
-    <a href="https://www.behance.net/soncarminha" target="_blank" class="btn-secondary">Ver en Behance →</a>
-  </div>
-  <div class="work-grid">
-
-    <a class="project-card" href="https://www.behance.net/gallery/245813133/Spotify" target="_blank">
-      <div class="project-thumb thumb-spotify">
-        <span class="project-thumb-label">Spotify</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-            <path d="M7 9.5c3-1 6.5-1 9.5.5M7.5 12c2.5-.8 5.5-.8 8.5.5M8 14.5c2-.6 4.5-.6 7 .3" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat">Copy · Campaña</p>
-        <h3 class="project-title">Spotify</h3>
-        <p class="project-desc">Desarrollo de concepto y copy para campaña de la plataforma de streaming.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/245798845/Powerade" target="_blank">
-      <div class="project-thumb thumb-powerade">
-        <span class="project-thumb-label">Powerade</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M12 3L4 12h5v9l8-10h-5z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat">Copy · Sport</p>
-        <h3 class="project-title">Powerade</h3>
-        <p class="project-desc">Copies y conceptos creativos para marca de bebida deportiva de Coca-Cola.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/192738053/YOIGO-revista-RESUMEN-POR-MESES" target="_blank">
-      <div class="project-thumb thumb-yoigo">
-        <span class="project-thumb-label">Yoigo</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="4" width="16" height="16" rx="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <path d="M8 9h8M8 12h6M8 15h4" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat">Editorial · Contenido</p>
-        <h3 class="project-title">Yoigo — Revista</h3>
-        <p class="project-desc">Resumen mensual y contenido editorial para la revista interna de Yoigo.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/244023735/Content-Social-CM" target="_blank">
-      <div class="project-thumb thumb-content">
-        <span class="project-thumb-label">Social</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <circle cx="18" cy="5" r="2.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <circle cx="6" cy="12" r="2.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <circle cx="18" cy="19" r="2.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <path d="M8.5 10.5l7-4M8.5 13.5l7 4" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat">Social Media · CM</p>
-        <h3 class="project-title">Content, Social & CM</h3>
-        <p class="project-desc">Estrategia y gestión de contenidos para redes sociales de diversas marcas.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/192753979/PORTFOLIO-PERSONAL" target="_blank">
-      <div class="project-thumb thumb-portfolio">
-        <span class="project-thumb-label">Portfolio</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="7" width="18" height="14" rx="2" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-            <path d="M8 7V5a2 2 0 014 0v2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat">Portfolio personal</p>
-        <h3 class="project-title">Selección de trabajos</h3>
-        <p class="project-desc">Recopilación personal de piezas y proyectos más representativos.</p>
-      </div>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/244094295/CV-CARMEN-IGLESIAS" target="_blank">
-      <div class="project-thumb thumb-cv">
-        <span class="project-thumb-label">CV</span>
-        <div class="project-thumb-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M9 12h6M9 16h4M9 8h6" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round"/>
-            <rect x="4" y="3" width="16" height="18" rx="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="project-info">
-        <p class="project-cat">Currículum · Identidad</p>
-        <h3 class="project-title">CV Carmen Iglesias</h3>
-        <p class="project-desc">Currículum diseñado con identidad visual propia para destacar en el sector.</p>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- SERVICIOS - primero -->
+<!-- SERVICIOS -->
 <section class="services" id="servicios" style="background:#49111C;">
   <p class="section-label" style="color:#A9927D;">Qué ofrezco</p>
   <h2 style="color:#F2F4F3;">Servicios</h2>
@@ -783,7 +572,7 @@
   <h2 style="color:#0A0908;">Skills</h2>
   <div class="skills-cards">
 
-    <div class="skill-card" style="background:#0A0908; border-color:#0A0908;">
+    <div class="skill-card" style="background:#0B1D2E; border-color:#0B1D2E;">
       <div class="skill-icon" style="background:#49111C;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="8" r="4" stroke="white" stroke-width="1.5"/>
@@ -807,7 +596,7 @@
     </div>
 
     <div class="skill-card" style="background:#A9927D; border-color:#A9927D;">
-      <div class="skill-icon" style="background:rgba(10,9,8,0.2);">
+      <div class="skill-icon" style="background:rgba(11,29,46,0.3);">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
           <rect x="13" y="3" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
@@ -815,11 +604,11 @@
           <rect x="13" y="13" width="8" height="8" rx="1.5" stroke="white" stroke-width="1.5"/>
         </svg>
       </div>
-      <div class="skill-num" style="color:#0A0908;">PRO</div>
-      <div class="skill-label" style="color:#0A0908;">Canva y CapCut nivel profesional</div>
+      <div class="skill-num" style="color:#0B1D2E;">PRO</div>
+      <div class="skill-label" style="color:#0B1D2E;">Canva y CapCut nivel profesional</div>
     </div>
 
-    <div class="skill-card" style="background:#0A0908; border-color:#0A0908;">
+    <div class="skill-card" style="background:#0B1D2E; border-color:#0B1D2E;">
       <div class="skill-icon" style="background:#49111C;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
@@ -847,7 +636,7 @@
 </section>
 
 <!-- PORTFOLIO - tercero -->
-<section class="work" id="trabajo" style="background:#0A0908;">
+<section class="work" id="trabajo" style="background:#0B1D2E;">
   <div class="work-header">
     <div>
       <p class="section-label" style="color:#A9927D;">Proyectos seleccionados</p>
@@ -874,7 +663,7 @@
       </div>
     </a>
 
-    <a class="project-card" href="https://www.behance.net/gallery/245798845/Powerade" target="_blank" style="background:#1a1a1a;">
+    <a class="project-card" href="https://www.behance.net/gallery/245798845/Powerade" target="_blank" style="background:#1B2D3E;">
       <div class="project-thumb thumb-powerade">
         <span class="project-thumb-label">Powerade</span>
         <div class="project-thumb-icon">
@@ -926,7 +715,7 @@
       </div>
     </a>
 
-    <a class="project-card" href="https://www.behance.net/gallery/192753979/PORTFOLIO-PERSONAL" target="_blank" style="background:#1a1a1a;">
+    <a class="project-card" href="https://www.behance.net/gallery/192753979/PORTFOLIO-PERSONAL" target="_blank" style="background:#1B2D3E;">
       <div class="project-thumb thumb-portfolio">
         <span class="project-thumb-label">Portfolio</span>
         <div class="project-thumb-icon">
@@ -966,61 +755,61 @@
 <!-- CV - cuarto -->
 <section class="cv-section" id="cv" style="background:#A9927D;">
   <p class="section-label" style="color:#49111C;">CV</p>
-  <h2 style="color:#0A0908;">Currículum</h2>
+  <h2 style="color:#0B1D2E;">Currículum</h2>
   <div class="cv-grid">
 
     <div class="cv-block">
       <h3 style="color:#49111C;">Experiencia</h3>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Copy Creativa &amp; Social Media</div>
+          <div class="cv-role" style="color:#0B1D2E;">Copy Creativa &amp; Social Media</div>
           <div class="cv-company" style="color:#5E503F;">VML</div>
           <div class="cv-year" style="color:#49111C;">Agencia creativa</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Copy Creativa &amp; Social Media</div>
+          <div class="cv-role" style="color:#0B1D2E;">Copy Creativa &amp; Social Media</div>
           <div class="cv-company" style="color:#5E503F;">Pool CP</div>
           <div class="cv-year" style="color:#49111C;">Agencia creativa</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Content Creator &amp; Social Media</div>
+          <div class="cv-role" style="color:#0B1D2E;">Content Creator &amp; Social Media</div>
           <div class="cv-company" style="color:#5E503F;">Annie Bonnie</div>
           <div class="cv-year" style="color:#49111C;">Agencia creativa</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Copy Creativa &amp; Content Creator</div>
+          <div class="cv-role" style="color:#0B1D2E;">Copy Creativa &amp; Content Creator</div>
           <div class="cv-company" style="color:#5E503F;">Hogarth</div>
           <div class="cv-year" style="color:#49111C;">Agencia de producción</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Social Media</div>
+          <div class="cv-role" style="color:#0B1D2E;">Social Media</div>
           <div class="cv-company" style="color:#5E503F;">Antena 3</div>
           <div class="cv-year" style="color:#49111C;">Medios de comunicación</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Freelance</div>
+          <div class="cv-role" style="color:#0B1D2E;">Freelance</div>
           <div class="cv-company" style="color:#5E503F;">Proyectos propios y pymes</div>
           <div class="cv-year" style="color:#49111C;">Desde 2019</div>
         </div>
@@ -1031,28 +820,28 @@
     <div class="cv-block">
       <h3 style="color:#49111C;">Formación</h3>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Máster en Creatividad Publicitaria</div>
+          <div class="cv-role" style="color:#0B1D2E;">Máster en Creatividad Publicitaria</div>
           <div class="cv-company" style="color:#5E503F;">Universidad de Vigo</div>
           <div class="cv-year" style="color:#49111C;">Posgrado</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Máster en Comunicación Digital</div>
+          <div class="cv-role" style="color:#0B1D2E;">Máster en Comunicación Digital</div>
           <div class="cv-company" style="color:#5E503F;">The Core School</div>
           <div class="cv-year" style="color:#49111C;">Posgrado</div>
         </div>
       </div>
 
-      <div class="cv-item" style="border-color:rgba(10,9,8,0.15);">
+      <div class="cv-item" style="border-color:rgba(11,29,46,0.15);">
         <div class="cv-dot" style="background:#49111C;"></div>
         <div>
-          <div class="cv-role" style="color:#0A0908;">Grado en Publicidad y RRPP</div>
+          <div class="cv-role" style="color:#0B1D2E;">Grado en Publicidad y RRPP</div>
           <div class="cv-company" style="color:#5E503F;">Universidad de Vigo</div>
           <div class="cv-year" style="color:#49111C;">Grado universitario</div>
         </div>
@@ -1066,7 +855,7 @@
 <section class="about" id="sobre" style="background:#F2F4F3;">
   <div>
     <p class="section-label" style="color:#49111C;">Sobre mí</p>
-    <h2 style="color:#0A0908;">De Copy en Copy y tiro porque me toca</h2>
+    <h2 style="color:#0B1D2E;">De Copy en Copy y tiro porque me toca</h2>
     <p style="color:#5E503F;">Soy Carmen, copywriter creativa y content creator con base en Madrid. Me muevo entre el concepto y la ejecución: de la idea que surge en un brief hasta la frase que engancha en un carrete.</p>
     <p style="color:#5E503F;">He trabajado con marcas como Spotify, Powerade y Yoigo, desarrollando piezas de copy, contenido para redes y estrategia editorial. Disponible para proyectos freelance y posiciones full time.</p>
   </div>
@@ -1076,7 +865,7 @@
       <div class="stat-label" style="color:#5E503F;">Años en el sector</div>
     </div>
     <div class="stat-item" style="border-color:#A9927D;">
-      <div class="stat-num" style="color:#49111C;">3</div>
+      <div class="stat-num" style="color:#49111C;">8</div>
       <div class="stat-label" style="color:#5E503F;">Grandes marcas</div>
     </div>
     <div class="stat-item" style="border-color:#A9927D;">
@@ -1085,13 +874,13 @@
     </div>
     <div class="stat-item" style="border-color:#A9927D;">
       <div class="stat-num" style="color:#49111C;">Madrid</div>
-      <div class="stat-label" style="color:#5E503F;">Con movilidad</div>
+      <div class="stat-label" style="color:#5E503F;">y Galicia</div>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO - último -->
-<section class="contact" id="contacto" style="background:#0A0908;">
+<section class="contact" id="contacto" style="background:#0B1D2E;">
   <p class="section-label" style="color:#A9927D;">Contacto</p>
   <h2 style="color:#F2F4F3;">Hablemos</h2>
   <p style="color:#A9927D;">Te dejo mi mail porque lo de escribirse cartas ya es un poco old-fashioned</p>
@@ -1102,7 +891,7 @@
   </div>
 </section>
 
-<footer style="background:#0A0908; border-color:#1a1a1a;">
+<footer style="background:#0B1D2E; border-color:#1B2D3E;">
   <span style="color:#5E503F;">© 2026 Carmen Iglesias Rodríguez</span>
   <span style="color:#5E503F;">Creative Copy &amp; Content Creator · Madrid</span>
 </footer>
